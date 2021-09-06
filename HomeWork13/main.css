@@ -1,0 +1,27 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(33, 194, 12);
+}
+.input-list{
+    width: 70vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 32px;
+    background-color: rgb(50,225,50);
+}
+.input-button{
+    width: 70vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    background-color: rgb(25,175,25);
+}
