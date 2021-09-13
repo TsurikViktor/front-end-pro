@@ -52,18 +52,19 @@
 		});
 
 		document.querySelector('#myList')
-    		.addEventListener('click', event => {
-    			if (event.target.className === 'saveList') {
-					if (event.target.parentNode.parentNode.style.color === 'green') {
-						event.target.parentNode.parentNode.style.color = 'black';
-					} else {
-						event.target.parentNode.parentNode.style.color = 'green';
-					}
-    			};
-    			if (event.target.className === 'delList') {
-					event.target.parentNode.parentNode.remove();
-    		  };
-    		});
+    	.addEventListener('click', event => {
+			let parent = event.target.closest('.list')
+    		if (event.target.classList.contains('saveList')) {
+				if (parent.style.color === 'green') {
+					parent.style.color = 'black';
+				} else {
+					parent.style.color = 'green';
+				}
+    		};
+    		if (event.target.classList.contains('delList')) {
+				parent.remove();
+    	  };
+    	});
 		
 	</script>
 </body>
