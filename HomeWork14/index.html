@@ -22,28 +22,22 @@
 	</div>
 	<div class="input-button">
 		<div class="input-button-conteiner">
-			<form name="myForm">
-				<input class="myInput" 
-					   name="myInputName" 
-					   type="text" 
-					   autofocus 
-					   placeholder="Имя" 
-					   value=""/>
-				<input class="myInput" 
-					   name="myInputSurname" 
-					   type="text" placeholder="Фамилия" 
-					   value=""/>
-				<input class="myInput" 
-					   name="myInputPhoneNumber" 
-					   type="text" 
-					   placeholder="Телефон" 
-					   value=""/>
-				<input class="myInput"
-					   name="saveButton" 
-					   type="button" 
-					   value="Добавить" 
-					   onClick="addRow();">
-			</form>
+			<input class="myInput" 
+				   name="myInputName" 
+				   type="text" 
+				   autofocus 
+				   placeholder="Имя" 
+				   value=""/>
+			<input class="myInput" 
+				   name="myInputSurname" 
+				   type="text" placeholder="Фамилия" 
+				   value=""/>
+			<input class="myInput" 
+				   name="myInputPhoneNumber" 
+				   type="text" 
+				   placeholder="Телефон" 
+				   value=""/>
+			<button class="addRow">Добавить</button>
 		</div>
 	</div>
 
@@ -54,8 +48,48 @@
 		let myInputSurname = document.querySelector(`[name="myInputSurname"]`);
 		let myInputPhoneNumber = document.querySelector(`[name="myInputPhoneNumber"]`);
 		let counter = 0;
+		let buttonAdd = document.querySelector(`.addRow`);
+		let buttonDel = document.querySelector('#phoneBook');
 
-		function addRow() {
+    	buttonAdd.addEventListener('click', event => {
+			if (event.target.classList.contains('addRow')) {
+				inputValid();
+				clearValue();
+			};
+		});
+
+		buttonDel.addEventListener('click', event => {
+			if (event.target.classList.contains('delRow')) {	
+				let child = event.target;
+				let parent = child.closest('.row');
+				parent.remove();
+    	  };
+    	});
+
+		function inputAlert() {
+			return alert('Введены некоректные данные')
+		};
+		function inputValid() {
+			if ( !myInputName.value || !myInputSurname.value ||!myInputPhoneNumber.value) {
+				return inputAlert() 
+			};
+			if (isNaN(myInputPhoneNumber.value)) {
+				myInputPhoneNumber.value = ``;
+				return inputAlert()
+			};
+			if (/\d/.test(myInputName.value)) {
+				myInputName.value = ``;
+				return inputAlert()
+			};
+			if (/\d/.test(myInputSurname.value)) {
+				myInputSurname.value = ``;
+				return inputAlert()
+			};
+			addInputData();
+
+		};
+
+		function addInputData() {
 			let add = phoneBook.insertRow(-1);
 			let addTr = document.createElement("tr");
 			let addTdCounterNumber = document.createElement("td");
@@ -63,23 +97,7 @@
 			let addTdSurnameame = document.createElement("td");
 			let addTdPhoneNumber = document.createElement("td");
 			let addTdDeleteButton = document.createElement("td");
-			
-			if ( !myInputName.value || !myInputSurname.value ||!myInputPhoneNumber.value) {
-				return alert('Введены некоректные данные')
-			};
-			if (isNaN(myInputPhoneNumber.value)) {
-				myInputPhoneNumber.value = ``;
-				return alert('Введены некоректные данные')
-			};
-			if (/\d/.test(myInputName.value)) {
-				myInputName.value = ``;
-				return alert('Введены некоректные данные')
-			};
-			if (/\d/.test(myInputSurname.value)) {
-				myInputSurname.value = ``;
-				return alert('Введены некоректные данные')
-			};
-
+		
 			counter += 1;
 			addTr.className = ('row');
 			addTdCounterNumber.textContent = counter;
@@ -87,25 +105,20 @@
 			addTdSurnameame.textContent = myInputSurname.value; 
 			addTdPhoneNumber.textContent = myInputPhoneNumber.value;
 			addTdDeleteButton.innerHTML = '<button class="delRow">Удалить</button>';
-			
+
 			addTr.appendChild(addTdCounterNumber);
 			addTr.appendChild(addTdName);
 			addTr.appendChild(addTdSurnameame);
 			addTr.appendChild(addTdPhoneNumber);
 			addTr.appendChild(addTdDeleteButton);
-			phoneBook.appendChild(addTr);
+			phoneBook.appendChild(addTr);			
+		};
 
+		function clearValue() {
 			myInputName.value = ``;
 			myInputSurname.value = ``;
 			myInputPhoneNumber.value = ``;
 		};
-
-		document.querySelector('#phoneBook')
-    		.addEventListener('click', event => {
-    			if (event.target.className === 'delRow') {
-					event.target.parentNode.parentNode.remove();
-    		  };
-    		});
 
 	</script>
 </body>

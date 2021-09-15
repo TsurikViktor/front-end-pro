@@ -1,4 +1,4 @@
-body{
+body {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -7,7 +7,7 @@ body{
     align-items: center;
     background-color: rgb(33, 194, 12);
 }
-.input-list{
+.input-list {
     width: 70vw;
     height: 80vh;
     display: flex;
@@ -16,7 +16,7 @@ body{
     font-size: 32px;
     background-color: rgb(50,185,225);
 }
-.input-button{
+.input-button {
     width: 70vw;
     height: 10vh;
     display: flex;
@@ -31,17 +31,26 @@ body{
     display: flex;
     flex-direction: column;
 }
-ul{
+ul {
     list-style-type: circle;
 }
-li{
-    width: 99%;
+li {
+    width: 98%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
-}
-/*li:before {
-     content: "0x272A"; 
 } 
+.colorSave {
+    background-color: chartreuse;
+}
+.colorSaveButton {
+    color: chartreuse;
+}
+.saveList {
+    background-color: green;
+}
+.delList {
+    background-color: red;
+}

@@ -6,64 +6,25 @@
 	<link rel="shortcut icon" href="favicon-star.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<title>HomeWork13</title>
+	<script async src="customs.js"></script>
+	<title>HomeWork16</title>
 </head>
 <body>
 	<div class="input-list">
-		<ul id="myList"></ul>
+		<ul id="myList">
+			<li class="list">
+				0. Пример
+				<div class="buttonConteiner">
+					<button class="saveList">Готово</button>
+					<button class="delList">Удалить</button>
+				</div>
+			</li>
+		</ul>
 	</div>
 	<div class="input-button">
-    	<input name="myInput" type="text" autofocus value=""/>
-		<button class="addToList">Add To List</button>
+		<form id="myForm">
+    		<input id="myInput" type="text" autofocus placeholder="Введите значение" value=""/>
+			<button class="addToList">Добавить</button>
+		</form>
 	</div>
-
-	<script>
-		
-		const button = document.querySelector('.addToList');
-		const input = document.querySelector(`[name="myInput"]`);
-		let counter = 0;
-		let textValue = ``;
-
-		button.addEventListener(`click`, () => {
-			if (!input.value) {
-				return
-			} 
-			let list = document.createElement("li");
-			let buttonConteiner = document.createElement("div")
-			let savebutton = document.createElement("button");
-			let delbutton = document.createElement("button");
-			let elemText = document.createTextNode(input.value);
-
-			counter += 1;
-			list.className = ('list');
-			savebutton.className = ('saveList');
-			delbutton.className = ('delList');
-			buttonConteiner.className = ('buttonConteiner');
-			
-			savebutton.innerHTML = 'Готово';
-			delbutton.innerHTML = 'Удалить';
-			list.textContent =`${counter}. ${input.value}`;
-			
-			buttonConteiner.appendChild(savebutton);
-			buttonConteiner.appendChild(delbutton);
-			list.appendChild(buttonConteiner)
-			myList.appendChild(list);
-			input.value = ``;
-		});
-
-		document.querySelector('#myList')
-    		.addEventListener('click', event => {
-    			if (event.target.className === 'saveList') {
-					if (event.target.parentNode.parentNode.style.color === 'green') {
-						event.target.parentNode.parentNode.style.color = 'black';
-					} else {
-						event.target.parentNode.parentNode.style.color = 'green';
-					}
-    			};
-    			if (event.target.className === 'delList') {
-					event.target.parentNode.parentNode.remove();
-    		  };
-    		});
-		
-	</script>
 </body>

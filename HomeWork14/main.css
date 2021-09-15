@@ -50,7 +50,7 @@ input {
     justify-content: center;
     align-items: center;
 }
-.input-button form {
+.input-button {
     width: 70vw;
     height: 5vh;
     display: flex;
@@ -64,6 +64,16 @@ input {
 .myInput {
     width: 24%;
     height: 32px;
+}
+.addRow {
+    width: 24%;
+    height: 32px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 .delRow{
     width: 100%;
