@@ -6,119 +6,43 @@
 	<link rel="shortcut icon" href="favicon-star.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<title>HomeWork13</title>
+	<script async src="customs.js"></script>
+	<title>HomeWork14</title>
 </head>
 <body>
 	<div class="input-list">
-		<table id="phoneBook">
-			<tr>
-				<th class="number">№</th>
-				<th class="Name">Имя</th>
-				<th class="Surname">Фамилия</th>
-				<th class="PhoneNumber">Телефон</th>
-				<th class="deleteButton"> Удаление</th>
-			</tr>
+		<table class="phoneBook">
+			<tbody id="phoneBook">
+				<tr>
+					<th class="number">№</th>
+					<th class="Name">Имя</th>
+					<th class="Surname">Фамилия</th>
+					<th class="PhoneNumber">Телефон</th>
+					<th class="deleteButton"> Удаление</th>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 	<div class="input-button">
 		<div class="input-button-conteiner">
-			<input class="myInput" 
-				   name="myInputName" 
-				   type="text" 
-				   autofocus 
-				   placeholder="Имя" 
-				   value=""/>
-			<input class="myInput" 
-				   name="myInputSurname" 
-				   type="text" placeholder="Фамилия" 
-				   value=""/>
-			<input class="myInput" 
-				   name="myInputPhoneNumber" 
-				   type="text" 
-				   placeholder="Телефон" 
-				   value=""/>
-			<button class="addRow">Добавить</button>
+			<form id="myForm">
+				<input class="myInput" 
+					   id="myInputName" 
+					   type="text" 
+					   autofocus 
+					   placeholder="Имя" 
+					   value=""/>
+				<input class="myInput" 
+					   id="myInputSurname" 
+					   type="text" placeholder="Фамилия" 
+					   value=""/>
+				<input class="myInput" 
+					   id="myInputPhoneNumber" 
+					   type="text" 
+					   placeholder="Телефон" 
+					   value=""/>
+				<button id="addRowButton">Добавить</button>
+			</form>
 		</div>
 	</div>
-
-	<script>
-		
-		let phoneBook = document.querySelector('#phoneBook');
-		let myInputName = document.querySelector(`[name="myInputName"]`);
-		let myInputSurname = document.querySelector(`[name="myInputSurname"]`);
-		let myInputPhoneNumber = document.querySelector(`[name="myInputPhoneNumber"]`);
-		let counter = 0;
-		let buttonAdd = document.querySelector(`.addRow`);
-		let buttonDel = document.querySelector('#phoneBook');
-
-    	buttonAdd.addEventListener('click', event => {
-			if (event.target.classList.contains('addRow')) {
-				inputValid();
-				clearValue();
-			};
-		});
-
-		buttonDel.addEventListener('click', event => {
-			if (event.target.classList.contains('delRow')) {	
-				let child = event.target;
-				let parent = child.closest('.row');
-				parent.remove();
-    	  };
-    	});
-
-		function inputAlert() {
-			return alert('Введены некоректные данные')
-		};
-		function inputValid() {
-			if ( !myInputName.value || !myInputSurname.value ||!myInputPhoneNumber.value) {
-				return inputAlert() 
-			};
-			if (isNaN(myInputPhoneNumber.value)) {
-				myInputPhoneNumber.value = ``;
-				return inputAlert()
-			};
-			if (/\d/.test(myInputName.value)) {
-				myInputName.value = ``;
-				return inputAlert()
-			};
-			if (/\d/.test(myInputSurname.value)) {
-				myInputSurname.value = ``;
-				return inputAlert()
-			};
-			addInputData();
-
-		};
-
-		function addInputData() {
-			let add = phoneBook.insertRow(-1);
-			let addTr = document.createElement("tr");
-			let addTdCounterNumber = document.createElement("td");
-			let addTdName = document.createElement("td");
-			let addTdSurnameame = document.createElement("td");
-			let addTdPhoneNumber = document.createElement("td");
-			let addTdDeleteButton = document.createElement("td");
-		
-			counter += 1;
-			addTr.className = ('row');
-			addTdCounterNumber.textContent = counter;
-			addTdName.textContent = myInputName.value;
-			addTdSurnameame.textContent = myInputSurname.value; 
-			addTdPhoneNumber.textContent = myInputPhoneNumber.value;
-			addTdDeleteButton.innerHTML = '<button class="delRow">Удалить</button>';
-
-			addTr.appendChild(addTdCounterNumber);
-			addTr.appendChild(addTdName);
-			addTr.appendChild(addTdSurnameame);
-			addTr.appendChild(addTdPhoneNumber);
-			addTr.appendChild(addTdDeleteButton);
-			phoneBook.appendChild(addTr);			
-		};
-
-		function clearValue() {
-			myInputName.value = ``;
-			myInputSurname.value = ``;
-			myInputPhoneNumber.value = ``;
-		};
-
-	</script>
 </body>

@@ -76,5 +76,6 @@ input {
     justify-content: center;
 }
 .delRow{
-    width: 100%;
+    width: 98%;
+    background-color: red;
 }
