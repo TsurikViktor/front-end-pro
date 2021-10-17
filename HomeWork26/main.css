@@ -1,0 +1,37 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(33, 194, 12);
+    align-items: center;
+    justify-content: space-around;
+}
+.albums-conteiner,
+.gallery-conteiner {
+    width: 48%;
+    height: 90%;
+    overflow: auto;
+    border: 2px solid blue;
+    border-radius: 5px;
+    background-color: rgb(112, 228, 97);
+}
+.albums-conteiner li {
+    cursor: pointer;
+}
+
+.gallery-conteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.gallery-conteiner img {
+    width: 50%;
+    height: 33%;
+}
+.highlight {
+    background-color: cadetblue;
+}
