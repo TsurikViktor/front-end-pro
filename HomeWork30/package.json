@@ -1,0 +1,19 @@
+{
+  "name": "calculator-js",
+  "version": "1.0.0",
+  "description": "calculator JS",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TsurikViktor/front-end-pro.git"
+  },
+  "author": "Tsurik Viktor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TsurikViktor/front-end-pro/issues"
+  },
+  "homepage": "https://github.com/TsurikViktor/front-end-pro#readme"
+}
