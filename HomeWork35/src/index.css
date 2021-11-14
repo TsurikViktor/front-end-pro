@@ -1,0 +1,138 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    min-width: 360px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(20, 240, 20);
+}
+
+.chat-conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 90%;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(132, 235, 235);
+    justify-content: space-evenly;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 98%;
+    height: 92%;
+    overflow: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(85, 240, 106);
+}
+
+.send-message-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 98%;
+    height: 5%;
+}
+
+.send-message-container form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.nameInput {
+    width: 20%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 5px 0 0 5px;
+}
+
+.messageInput {
+    width: 65%;
+    height: 100%;
+    border: 2px solid black;
+}
+.btnSend {
+    width: 15%;
+    height: 114%;
+    border: 2px solid black;
+    border-radius: 0 5px 5px 0;
+}
+
+.message {
+    width: 95%;
+    height: 15%;
+    min-height: 80px;
+    padding-top: 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    animation-name: center;
+    animation-duration: 1.5s;
+}
+
+.Author-name {
+    width: 25%;
+    min-height: 20 px;
+    margin: 0;
+    position: relative;
+    top: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid cornflowerblue;
+    border-radius: 5px 5px 0 0;
+    word-break: break-all;
+
+}
+
+.Text-message {
+    width: 100%;
+    min-height: 60px;
+    max-height: 150px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    border-radius: 0 5px 5px 5px;
+    overflow: auto;
+    word-break: break-all;
+}
+
+@keyframes center {
+    from {
+        transform: rotateX(90deg) rotateY(270deg) rotateZ(90deg);
+    }
+    to {
+        transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+    }
+    from {
+        opacity: 0.5
+    }
+    to {
+        opacity: 1
+    }
+}
