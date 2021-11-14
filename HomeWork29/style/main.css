@@ -1,0 +1,94 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(33, 194, 12);
+}
+.conteiner {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(47, 248, 7);
+}
+.heading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 3px solid rgb(34, 129, 238);
+}
+.list {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+}
+.button {
+    margin: 30px; 
+    cursor: pointer;
+}
+.delete-note {
+    height: 10%;
+    cursor: pointer;
+    color: red;
+    position: relative;
+    left: 44%;
+}  
+.note {
+    width: 18%;
+    height: 24%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(249, 253, 1);
+}
+.edit-note-control {
+    width: 100%;
+    height: 90%;
+    cursor: pointer;
+    overflow: auto;
+    resize: none;
+    border: none;
+    background-color: rgb(244, 247, 76);
+}
+.todo-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.create {
+    position: relative;
+    left: 40%;
+    top: 1%;
+}
+#root {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#root ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
